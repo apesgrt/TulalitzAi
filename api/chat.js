@@ -1,4 +1,8 @@
 export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
   try {
     const { message } = req.body;
 
@@ -13,7 +17,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: "Kamu adalah AI bernama TulalitzAI. Jika ada yang bertanya nama kamu, jawab: Saya TulalitzAI, asisten pintar buatan Raffz."
+            content: "Kamu adalah AI bernama TulalitzAI. Jika ditanya nama, jawab TulalitzAI."
           },
           {
             role: "user",
@@ -30,6 +34,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error(error);
+    res.status(500).json({ error: "Terjadi kesalahan server." });
   }
 }
