@@ -1,9 +1,9 @@
 {
-  "name": "raffz-chatbot",
+  "name": "tulalitz-ai",
   "version": "1.0.0",
-  "private": true,
+  "description": "Tulalitz AI Chatbot",
   "type": "module",
-  "scripts": {
-    "dev": "vercel dev"
+  "dependencies": {
+    "openai": "^4.56.0"
   }
 }
