@@ -1,30 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Raffz AI Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TulalitzAi Chat</title>
+
+  <!-- Font Modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Background Video -->
-<video autoplay muted loop id="bg-video">
-  <source src="https://files.catbox.moe/fgjfig.mp4" type="video/mp4">
-</video>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="https://files.catbox.moe/fgjfig.mp4" type="video/mp4">
+  </video>
 
-<!-- Overlay biar ga terlalu terang -->
-<div class="overlay"></div>
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
 
-<!-- Chat Container -->
-<div class="chat-container">
-  <div class="chat-box" id="chat"></div>
+  <!-- Chat Wrapper -->
+  <div class="chat-container">
 
-  <div class="input-box">
-    <input type="text" id="input" placeholder="Ketik pesan..." />
-    <button onclick="kirim()">Kirim</button>
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="bot-info">
+        <div class="bot-avatar">🤖</div>
+        <div>
+          <h2 id="botName">TulalitzAi</h2>
+          <span class="status">Online</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-box" id="chat"></div>
+
+    <!-- Typing Indicator -->
+    <div class="typing" id="typing" style="display:none;">
+      <span id="typingName">TulalitzAi</span> sedang mengetik
+      <span class="dots"></span>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-box">
+      <input 
+        type="text" 
+        id="input" 
+        placeholder="Ketik pesan..."
+        autocomplete="off"
+        onkeydown="if(event.key==='Enter'){kirim()}"
+      />
+      <button onclick="kirim()">➤</button>
+    </div>
+
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
