@@ -1,9 +1,6 @@
 {
   "name": "tulalitz-ai",
   "version": "1.0.0",
-  "description": "Tulalitz AI Chatbot",
   "type": "module",
-  "dependencies": {
-    "openai": "^4.56.0"
-  }
+  "dependencies": {}
 }
